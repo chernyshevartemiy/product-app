@@ -21,7 +21,7 @@ const Product = ({product}: ProductProps) => {
       {details &&
         <div>
           <span>{product.description}</span>
-          <p>Rate: <span className='font-bold'>{product.rating.rate}</span></p>
+          <p>Rate: <span className='font-bold'>{product?.rating?.rate}</span></p>
         </div>
       }
     </div>
