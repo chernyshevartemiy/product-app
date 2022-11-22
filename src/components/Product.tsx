@@ -13,12 +13,17 @@ const Product = ({product}: ProductProps) => {
     <div className='border py-2 px-4 rounded flex flex-col items-center mb-2'>
       <img className='w-1/6 mb-4' src={product.image}/>
       <p>{product.title}</p>
-      <span className='font-bold mb-2'>{product.price}</span>
+      <span className='font-bold mb-2'>{product.price}$</span>
       <button className={buttonClasses.join(' ')}
               onClick={() => setShow(!details)}>
         {details ? 'Hide Details' : 'Show Details'}
       </button>
-      {details && <span>{product.description}</span>}
+      {details &&
+        <div>
+          <span>{product.description}</span>
+          <p>Rate: <span className='font-bold'>{product.rating.rate}</span></p>
+        </div>
+      }
     </div>
   );
 };
